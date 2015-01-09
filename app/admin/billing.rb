@@ -1,4 +1,5 @@
 ActiveAdmin.register Billing do
+  permit_params :billed_amount
 
 
   # See permitted parameters documentation:
