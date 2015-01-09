@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = CourseAreas -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => CourseAreas %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @course_area.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @course_areas.name %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Course:</strong>
-  <%= @course_area.course %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              course_areas_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_course_areas_path(@course_areas), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              course_areas_path(@course_areas),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<%= link_to 'Edit', edit_course_area_path(@course_area) %> |
-<%= link_to 'Back', course_areas_path %>
