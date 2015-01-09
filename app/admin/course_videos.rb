@@ -1,4 +1,5 @@
 ActiveAdmin.register CourseVideos do
+  permit_params :video_path
 
 
   # See permitted parameters documentation:
