@@ -1,0 +1,27 @@
+<h1>Listing course_areas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Course</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_areas.each do |course_area| %>
+      <tr>
+        <td><%= course_area.name %></td>
+        <td><%= course_area.course %></td>
+        <td><%= link_to 'Show', course_area %></td>
+        <td><%= link_to 'Edit', edit_course_area_path(course_area) %></td>
+        <td><%= link_to 'Destroy', course_area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course area', new_course_area_path %>
