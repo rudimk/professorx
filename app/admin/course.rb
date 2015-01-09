@@ -1,4 +1,5 @@
 ActiveAdmin.register Course do
+  permit_params :title, :author, :cost
 
 
   # See permitted parameters documentation:
