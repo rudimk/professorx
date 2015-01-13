@@ -1,0 +1,18 @@
+= form_for @course, :html => { :class => 'form-horizontal form-model' } do |f|
+  .form-group
+    = f.label :title, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :title, :class => 'text-field form-control'
+  .form-group
+    = f.label :author, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :author, :class => 'text-field form-control'
+  .form-group
+    = f.label :cost, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.number_field :cost, :class => 'text-field form-control'
+  .form-group
+    .col-md-offset-2.col-md-10
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+        courses_path, :class => 'btn btn-default'                    |
